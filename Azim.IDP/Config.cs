@@ -10,6 +10,11 @@ public static class Config
         { 
             new IdentityResources.OpenId(),
             new IdentityResources.Profile(),
+            new IdentityResources.Email(),
+            new IdentityResources.Phone(),
+            new IdentityResource("roles",
+                "Your Role(s)",
+                new[] { "role" })
         };
 
     public static IEnumerable<ApiScope> ApiScopes =>
@@ -35,7 +40,10 @@ public static class Config
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.OpenId
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Phone,
+                        IdentityServerConstants.StandardScopes.Email,
+                        "roles"
                     },
                     ClientSecrets = {new Secret("secret".Sha256())},
                     RequireConsent = true
