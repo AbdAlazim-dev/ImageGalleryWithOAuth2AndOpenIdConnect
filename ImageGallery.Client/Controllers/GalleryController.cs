@@ -185,6 +185,9 @@ namespace ImageGallery.Client.Controllers
         {
             var identityToken = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.IdToken);
             var userClaimsStringBuilder = new StringBuilder();
+
+            var accessToken = await HttpContext.GetTokenAsync
+                (OpenIdConnectParameterNames.AccessToken);
             foreach(var claim in User.Claims)
             {
                 userClaimsStringBuilder.AppendLine($"Claim type =" +
@@ -193,6 +196,8 @@ namespace ImageGallery.Client.Controllers
             _logger.LogInformation("identity token & user claims" +
                 $"\n {identityToken} " +
                 $"\n {userClaimsStringBuilder}");
+
+            _logger.LogInformation($"The access Token = {accessToken}");
         }
     }
 }
