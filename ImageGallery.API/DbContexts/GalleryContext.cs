@@ -19,49 +19,49 @@ namespace ImageGallery.API.DbContexts
                 new Image()
                 {
                     Id = new Guid("25320c5e-f58a-4b1f-b63a-8ee07a840bdf"),
-                    Title = "An image by David",
+                    Title = "An image by Azim",
                     FileName = "3fbe2aea-2257-44f2-b3b1-3d8bacade89c.jpg",
                     OwnerId = "d860efca-22d9-47fd-8249-791ba61b07c7"
                 },
                 new Image()
                 {
                     Id = new Guid("1efe7a31-8dcc-4ff0-9b2d-5f148e2989cc"),
-                    Title = "An image by David",
+                    Title = "An image by Azim",
                     FileName = "43de8b65-8b19-4b87-ae3c-df97e18bd461.jpg",
                     OwnerId = "d860efca-22d9-47fd-8249-791ba61b07c7"
                 },
                 new Image()
                 {
                     Id = new Guid("b24e3df5-0394-468d-9c1d-db1252fea920"),
-                    Title = "An image by David",
+                    Title = "An image by Azim",
                     FileName = "46194927-ccda-432f-bc95-4820318c08c7.jpg",
                     OwnerId = "d860efca-22d9-47fd-8249-791ba61b07c7"
                 },
                 new Image()
                 {
                     Id = new Guid("9f35e705-637a-4bbe-8c35-402b2ecf7128"),
-                    Title = "An image by David",
+                    Title = "An image by Azim",
                     FileName = "4cdd494c-e6e1-4af1-9e54-24a8e80ea2b4.jpg",
                     OwnerId = "d860efca-22d9-47fd-8249-791ba61b07c7"
                 },
                 new Image()
                 {
                     Id = new Guid("939df3fd-de57-4caf-96dc-c5e110322a96"),
-                    Title = "An image by David",
+                    Title = "An image by Azim",
                     FileName = "5c20ca95-bb00-4ef1-8b85-c4b11e66eb54.jpg",
                     OwnerId = "d860efca-22d9-47fd-8249-791ba61b07c7"
                 },
                 new Image()
                 {
                     Id = new Guid("d70f656d-75a7-45fc-b385-e4daa834e6a8"),
-                    Title = "An image by David",
+                    Title = "An image by Azim",
                     FileName = "6b33c074-65cf-4f2b-913a-1b2d4deb7050.jpg",
                     OwnerId = "d860efca-22d9-47fd-8249-791ba61b07c7"
                 },
                 new Image()
                 {
                     Id = new Guid("ce1d2b1c-7869-4df5-9a32-2cbaca8c3234"),
-                    Title = "An image by David",
+                    Title = "An image by Azim",
                     FileName = "7e80a4c8-0a8a-4593-a16f-2e257294a1f9.jpg",
                     OwnerId = "d860efca-22d9-47fd-8249-791ba61b07c7"
                 },

@@ -27,7 +27,7 @@ public static class TestUsers
             {
                 new TestUser
                 {
-                    SubjectId = "1",
+                    SubjectId = "d860efca-22d9-47fd-8249-791ba61b07c7",
                     Username = "Azim",
                     Password = "Azimattya1231213",
                     Claims =
