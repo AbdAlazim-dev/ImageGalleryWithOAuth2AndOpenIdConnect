@@ -50,7 +50,8 @@ builder.Services.AddAuthentication(options =>
     options.Scope.Add("email");
     options.Scope.Add("roles");
     options.Scope.Add("country");
-    options.Scope.Add("imagegalleryapi.fullaccess");
+    options.Scope.Add("imagegalleryapi.read");
+    options.Scope.Add("imagegalleryapi.write");
     //Remove Claims filters
     options.ClaimActions.Remove("aud");
     //Delete some claims

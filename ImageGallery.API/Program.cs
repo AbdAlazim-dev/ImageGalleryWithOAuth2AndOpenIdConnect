@@ -1,7 +1,9 @@
+using ImageGallery.API.Authorization;
 using ImageGallery.API.DbContexts;
 using ImageGallery.API.Services;
 using ImageGallery.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.JsonWebTokens;
 
@@ -38,11 +40,24 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidTypes = new[] { "at+jwt" }
         };
     });
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IAuthorizationHandler, MustOwnImageHandler>();
 
 builder.Services.AddAuthorization(authorizationOptions =>
 {
     authorizationOptions.AddPolicy("UserCanAddImage",
         AuthorizationPolicies.CanAddImage());
+
+    authorizationOptions.AddPolicy("MustOwnImage", policyBuilder =>
+    {
+        policyBuilder.RequireAuthenticatedUser();
+        policyBuilder.AddRequirements(new MustOwnImageRequirment());
+    });
+
+    authorizationOptions.AddPolicy("ClientCannAddImages", policyBuilder =>
+    {
+        policyBuilder.RequireClaim("scope", "imagegalleryapi.read");
+    });
 });
 
 var app = builder.Build();

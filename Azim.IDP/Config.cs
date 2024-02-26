@@ -24,14 +24,18 @@ public static class Config
             new ApiResource("imagegalleryapi", "Image Gallary API",
                 new[] {"role", "country"})
             {
-                Scopes = { "imagegalleryapi.fullaccess" }
+                Scopes = { "imagegalleryapi.fullaccess", 
+                    "imagegalleryapi.read",
+                    "imagegalleryapi.read"}
             }
         };
 
     public static IEnumerable<ApiScope> ApiScopes =>
         new ApiScope[]
             {
-                new ApiScope("imagegalleryapi.fullaccess")
+                new ApiScope("imagegalleryapi.fullaccess"),
+                new ApiScope("imagegalleryapi.read"),
+                new ApiScope("imagegalleryapi.write")
             };
 
     public static IEnumerable<Client> Clients =>
@@ -58,7 +62,9 @@ public static class Config
                         IdentityServerConstants.StandardScopes.Email,
                         "roles",
                         "country",
-                        "imagegalleryapi.fullaccess"
+                        //"imagegalleryapi.fullaccess",
+                        "imagegalleryapi.read",
+                        "imagegalleryapi.write"
                     },
                     ClientSecrets = {new Secret("secret".Sha256())},
                     RequireConsent = true
