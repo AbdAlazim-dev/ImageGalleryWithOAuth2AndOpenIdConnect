@@ -14,12 +14,15 @@ public static class Config
             new IdentityResources.Phone(),
             new IdentityResource("roles",
                 "Your Role(s)",
-                new[] { "role" })
+                new[] { "role" }),
+            new IdentityResource("country", "country you're living in",
+                new List<string>() { "country" })
         };
     public static IEnumerable<ApiResource> ApiResources =>
         new ApiResource[]
         {
-            new ApiResource("imagegalleryapi", "Image Gallary API")
+            new ApiResource("imagegalleryapi", "Image Gallary API",
+                new[] {"role", "country"})
             {
                 Scopes = { "imagegalleryapi.fullaccess" }
             }
@@ -54,6 +57,7 @@ public static class Config
                         IdentityServerConstants.StandardScopes.Phone,
                         IdentityServerConstants.StandardScopes.Email,
                         "roles",
+                        "country",
                         "imagegalleryapi.fullaccess"
                     },
                     ClientSecrets = {new Secret("secret".Sha256())},

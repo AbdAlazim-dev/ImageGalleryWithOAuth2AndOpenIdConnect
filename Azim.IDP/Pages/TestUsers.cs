@@ -15,14 +15,6 @@ public static class TestUsers
     {
         get
         {
-            var address = new
-            {
-                street_address = "One Hacker Way",
-                locality = "Heidelberg",
-                postal_code = "69118",
-                country = "Germany"
-            };
-                
             return new List<TestUser>
             {
                 new TestUser
@@ -40,12 +32,12 @@ public static class TestUsers
                         new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
                         new Claim(JwtClaimTypes.PhoneNumber, "0532150994"),
                         new Claim(JwtClaimTypes.Role, "PayingUser"),
-                        new Claim(JwtClaimTypes.Address, JsonSerializer.Serialize(address), IdentityServerConstants.ClaimValueTypes.Json)
+                        new Claim("country", "sud")
                     }
                 },
                 new TestUser
                 {
-                    SubjectId = "2",
+                    SubjectId = "b7539694-97e7-4dfe-84da-b4256e1ff5c7",
                     Username = "bob",
                     Password = "bob",
                     Claims =
@@ -58,7 +50,7 @@ public static class TestUsers
                         new Claim(JwtClaimTypes.WebSite, "http://bob.com"),
                         new Claim(JwtClaimTypes.PhoneNumber, "0557604177"),
                         new Claim(JwtClaimTypes.Role, "FreeUser"),
-                        new Claim(JwtClaimTypes.Address, JsonSerializer.Serialize(address), IdentityServerConstants.ClaimValueTypes.Json)
+                        new Claim("country", "uae")
                     }
                 }
             };

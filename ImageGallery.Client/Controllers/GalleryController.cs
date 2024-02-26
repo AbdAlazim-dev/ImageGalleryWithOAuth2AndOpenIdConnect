@@ -127,12 +127,13 @@ namespace ImageGallery.Client.Controllers
 
             return RedirectToAction("Index");
         }
-        [Authorize(Roles = "PayingUser")]
+        //the policy we define on the class library project AuthorizationPolicies
+        [Authorize(Policy = "UserCanAddImage")]
         public IActionResult AddImage()
         {
             return View();
         }
-        [Authorize(Roles = "PayingUser")]
+        [Authorize(Policy = "UserCanAddImage")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddImage(AddImageViewModel addImageViewModel)

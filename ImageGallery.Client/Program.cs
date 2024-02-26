@@ -1,6 +1,8 @@
+using ImageGallery.Authorization;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Net.Http.Headers;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -47,6 +49,7 @@ builder.Services.AddAuthentication(options =>
     //add the claims
     options.Scope.Add("email");
     options.Scope.Add("roles");
+    options.Scope.Add("country");
     options.Scope.Add("imagegalleryapi.fullaccess");
     //Remove Claims filters
     options.ClaimActions.Remove("aud");
@@ -55,11 +58,18 @@ builder.Services.AddAuthentication(options =>
     options.ClaimActions.DeleteClaim("idp");
     //Map claims
     options.ClaimActions.MapJsonKey("role", "role");
+    options.ClaimActions.MapUniqueJsonKey("country", "country");
     options.TokenValidationParameters = new()
     {
         NameClaimType = "givin_name",
         RoleClaimType = "role"
     };
+});
+
+builder.Services.AddAuthorization(authorizationBuilder =>
+{
+    authorizationBuilder.AddPolicy("UserCanAddImage",
+        AuthorizationPolicies.CanAddImage());
 });
 
 var app = builder.Build();

@@ -68,49 +68,49 @@ namespace ImageGallery.API.DbContexts
                 new Image()
                 {
                     Id = new Guid("2645bd94-3624-43fc-b21f-1209d730fc71"),
-                    Title = "An image by Emma",
+                    Title = "An image by bob",
                     FileName = "8d351bbb-f760-4b56-9d4e-e8d61619bf70.jpg",
                     OwnerId = "b7539694-97e7-4dfe-84da-b4256e1ff5c7"
                 },
                 new Image()
                 {
                     Id = new Guid("3f41dc87-e8de-42ee-ac8d-355e4d3e1a2d"),
-                    Title = "An image by Emma",
+                    Title = "An image by bob",
                     FileName = "b2894002-0b7c-4f05-896a-856283012c87.jpg",
                     OwnerId = "b7539694-97e7-4dfe-84da-b4256e1ff5c7"
                 },
                 new Image()
                 {
                     Id = new Guid("d3118665-43e3-4905-8848-5e335a428dd5"),
-                    Title = "An image by Emma",
+                    Title = "An image by bob",
                     FileName = "cc412f08-2a7b-4225-b659-07fdb168302d.jpg",
                     OwnerId = "b7539694-97e7-4dfe-84da-b4256e1ff5c7"
                 },
                 new Image()
                 {
                     Id = new Guid("136f358d-98fb-4961-855c-59d5a6d1fa19"),
-                    Title = "An image by Emma",
+                    Title = "An image by bob",
                     FileName = "cd139111-c82e-4bc8-9f7d-43a1059bfe73.jpg",
                     OwnerId = "b7539694-97e7-4dfe-84da-b4256e1ff5c7"
                 },
                 new Image()
                 {
                     Id = new Guid("5e0e1379-3e8e-4f51-99f1-1fb9ec3a19b0"),
-                    Title = "An image by Emma",
+                    Title = "An image by bob",
                     FileName = "dc3f39bf-d1da-465d-9ea4-935902c2e3d2.jpg",
                     OwnerId = "b7539694-97e7-4dfe-84da-b4256e1ff5c7"
                 },
                 new Image()
                 {
                     Id = new Guid("ab46efdb-0384-400c-89cb-95bba1c500e9"),
-                    Title = "An image by Emma",
+                    Title = "An image by bob",
                     FileName = "e0e32179-109c-4a8a-bf91-3d65ff83ca29.jpg",
                     OwnerId = "b7539694-97e7-4dfe-84da-b4256e1ff5c7"
                 },
                 new Image()
                 {
                     Id = new Guid("ae03d971-40a6-4350-b8a9-7b12e1d93d71"),
-                    Title = "An image by Emma",
+                    Title = "An image by bob",
                     FileName = "fdfe7329-e05c-41fb-a7c7-4f3226d28c49.jpg",
                     OwnerId = "b7539694-97e7-4dfe-84da-b4256e1ff5c7"
                 });
