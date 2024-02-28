@@ -46,6 +46,8 @@ public static class Config
                     ClientName = "ImageGallary",
                     ClientId = "imagegalleryclient",
                     AllowedGrantTypes = GrantTypes.Code,
+                    AllowOfflineAccess = true,
+                    UpdateAccessTokenClaimsOnRefresh = true,
                     RedirectUris =
                     {
                         "https://localhost:7184/signin-oidc"

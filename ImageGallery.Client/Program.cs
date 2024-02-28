@@ -52,6 +52,7 @@ builder.Services.AddAuthentication(options =>
     options.Scope.Add("country");
     options.Scope.Add("imagegalleryapi.read");
     options.Scope.Add("imagegalleryapi.write");
+    options.Scope.Add("offline_access");
     //Remove Claims filters
     options.ClaimActions.Remove("aud");
     //Delete some claims

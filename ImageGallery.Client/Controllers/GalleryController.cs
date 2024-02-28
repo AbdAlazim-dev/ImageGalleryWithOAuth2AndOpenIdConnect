@@ -189,6 +189,9 @@ namespace ImageGallery.Client.Controllers
 
             var accessToken = await HttpContext.GetTokenAsync
                 (OpenIdConnectParameterNames.AccessToken);
+
+            var refreshToken = await HttpContext.GetTokenAsync
+                (OpenIdConnectParameterNames.RefreshToken);
             foreach(var claim in User.Claims)
             {
                 userClaimsStringBuilder.AppendLine($"Claim type =" +
@@ -199,6 +202,7 @@ namespace ImageGallery.Client.Controllers
                 $"\n {userClaimsStringBuilder}");
 
             _logger.LogInformation($"The access Token = {accessToken}");
+            _logger.LogInformation($"the Refresh Token = {refreshToken}");
         }
     }
 }
