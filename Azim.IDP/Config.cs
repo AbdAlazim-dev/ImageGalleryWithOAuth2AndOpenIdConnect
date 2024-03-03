@@ -26,7 +26,8 @@ public static class Config
             {
                 Scopes = { "imagegalleryapi.fullaccess", 
                     "imagegalleryapi.read",
-                    "imagegalleryapi.read"}
+                    "imagegalleryapi.read"},
+                ApiSecrets  = { new  Secret("apisecret".Sha256()) }
             }
         };
 
@@ -46,7 +47,9 @@ public static class Config
                     ClientName = "ImageGallary",
                     ClientId = "imagegalleryclient",
                     AllowedGrantTypes = GrantTypes.Code,
+                    AccessTokenLifetime = 120,
                     AllowOfflineAccess = true,
+                    AccessTokenType = AccessTokenType.Reference,
                     UpdateAccessTokenClaimsOnRefresh = true,
                     RedirectUris =
                     {
